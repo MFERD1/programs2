@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+
+    <style>
+        /* Use Space Grotesk font and set text color */
+        body {
+            font-family: "Space Grotesk", Helvetica, Arial, sans-serif;
+            color: rgba(9, 19, 60, 1);
+            background-image: url();
+            background-position: center;
+            background-size: cover;
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            margin: 0; /* Remove default margin */
+        }
+
+        /* Style for the container that holds the image and text */
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Adjust the gap between the image and text */
+            padding: 20px; /* Add padding to create space around the header */
+        }
+
+        /* Style for the image */
+        .logo {
+            width: 100px; /* Set the desired width for your logo */
+            height: auto;
+        }
+
+        /* Style for the heading */
+        .heading {
+            font-size: 20px; /* Adjust the font size for the heading */
+            font-weight: bold;
+        }
+
+        /* Style for the rest of the content */
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .glass-panel {
+            background-image: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0.3) 0%,
+                rgba(255, 255, 255, 0.1) 100%
+            );
+            backdrop-filter: blur(6px);
+            border-radius: 12px;
+            width: calc(33.33% - 16px); /* 33.33% width with reduced spacing */
+            max-width: 300px; /* Maximum width to limit the size */
+            padding: 10px; /* Reduced padding */
+            box-shadow: rgba(255, 255, 255, 0.5) -10px -10px 25px inset,
+                rgba(0, 0, 0, 0.1) 5px 5px 15px, rgba(0, 0, 0, 0.06) 2px 2px 5px;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center align content horizontally */
+        }
+
+        .h2 {
+            font-size: 0.9em; /* Reduced font size */
+            font-weight: 900; /* Increased font weight for the title */
+            margin-top: 0;
+        }
+
+        .card__text {
+            font-size: 8px; /* Reduced font size */
+            line-height: 1.3; /* Adjusted line height */
+            opacity: 0.8;
+            margin bottom: 1em;
+        }
+
+        .glass-button-container {
+            display: flex;
+            width: 100%;
+            justify-content: center; /* Center align the "Join" button */
+        }
+
+        /* Modified glass button size */
+        .glass-button {
+            padding: 0.4em 0.8em; /* Increased padding for larger size */
+            background-image: linear-gradient(
+                -45deg,
+                rgba(9, 28, 60, 1) 0%,
+                rgba(67, 46, 103, 1) 100%
+            );
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 10px; /* Increased font size for larger size */
+            letter spacing: 0.05em; /* Reduced letter spacing for smaller size */
+            border-radius: 10em;
+            color: white;
+            margin-top: 10px; /* Add margin to separate the button from content */
+        }
+
+        /* Added style for speaker name with glowing effect */
+        .speaker-name {
+            font-size: 8px; /* Reduced font size for speaker name */
+            opacity: 0.8;
+            animation: glow 2s ease-in-out infinite; /* Slow, gradual glowing animation */
+        }
+
+        @keyframes glow {
+            0% {
+                opacity: 0.5;
+                box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.7);
+            }
+            50% {
+                opacity: 1;
+                box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.9);
+            }
+            100% {
+                opacity: 0.5;
+                box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.7);
+            }
+        }
+
+        .meeting-name {
+            font-size: 12px; /* Increase font size for meeting name */
+            margin-top: 0.5em; /* Add space between meeting name and other content */
+            font-weight: bold; /* Make the meeting name bold */
+        }
+
+        .time-slot {
+            font-size: 8px; /* Reduced font size for time slot */
+            margin-top: 0.3em; /* Add space between time slot and other content */
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <img src="https://laskerkomol.files.wordpress.com/2021/06/mferd.jpg" alt="Logo" class="logo"> <!-- Add your logo image here -->
+        <h1 class="heading">MFERD Daily Programs</h1> <!-- Added heading here -->
+    </div>
+    
+    <!-- Create speaker cards for all 8 time slots -->
+    <div class="button-container">
+        <div class="glass-panel" id="speakerInfo1">
+            <!-- Content for speaker 1 goes here -->
+        </div>
+        <div class="glass-panel" id="speakerInfo2">
+            <!-- Content for speaker 2 goes here -->
+        </div>
+        <div class ="glass-panel" id="speakerInfo3">
+            <!-- Content for speaker 3 goes here -->
+        </div>
+        <div class="glass-panel" id="speakerInfo4">
+            <!-- Content for speaker 4 goes here -->
+        </div>
+        <div class="glass-panel" id="speakerInfo5">
+            <!-- Content for speaker 5 goes here -->
+        </div>
+        <div class="glass-panel" id="speakerInfo6">
+            <!-- Content for speaker 6 goes here -->
+        </div>
+        <div class="glass-panel" id="speakerInfo7">
+            <!-- Content for speaker 7 goes here -->
+        </div>
+        <div class="glass-panel" id="speakerInfo8">
+            <!-- Content for speaker 8 goes here -->
+        </div>
+    </div>
+    
+    <script>
+        // Define speaker information and time slots
+        function getCurrentDaySpeaker() {
+            const speakers = {
+                Monday: ["Dr Mushtaq Ahmed", "Speaker B", "Moulana Khaleel ur Rahman,Mr. Qadir Maaz", "Moulana Ayub Ansaari,Dr. Fuzail Iyaz", "Moulana Moin Ahmed,Dr. Fuzail Iyaz", "Moulana Moin Ahmed,Mr. Sameer Panwala", "Mufti Mohsin,Dr. Syed Misbahuddin", "Moulana Syed Shahid Ali Afsar,Mr. Abdullah Mubarak"],
+                Tuesday: ["Dr Mushtaq Ahmed", "Speaker I", "Moulana Khaleel ur Rahman,Dr. Syed Burhan", "Moulana Ayub Ansaari,Mr. Mohammed Ismail", "Moulana Moin Ahmed,Mr. Ghufran Khan", "Moulana Dr Mushtaq Ahmed", "Mufti Mohsin,Mr. Qadir Maaz", "Moulana Syed Shahid Ali Afsar, Mr. Bilal"],
+                Wednesday: ["Dr Mushtaq Ahmed", "Speaker P", "Moulana Khaleel ur Rahman,Mr. Ghufran Khan", "Moulana Ayub Ansaari,Mr. Azhar Syyed", "Moulana Moin Ahmed,Dr. Mushtaq Ahmed", "Moulana Dr Mushtaq Ahmed,Mr. Sameer Panwala", "Mufti Mohsin,Dr. Fuzail Iyaz", "Moulana Syed Shahid Ali Afsar,Dr.  Mohammed Sajid Ali"],
+                Thursday: ["Dr Mushtaq Ahmed", "Speaker W", "Moulana Zia Ul Haq ,Moulana Imran", "Moulana Hazique Nadvi,MASHWARA", "Moulana Moin Ahmed,Mr. Mohd Younus", "Mr. Sameer Panwala,Moulana Dr Mushtaq Ahmed,", "Mufti Mohsin,Dr. Mushtaq Ahmed", "Moulana Ahsan ul Haq,Dr.  Mohammed Sajid Ali"],
+                Friday: ["Dr Mushtaq Ahmed", "Speaker AD", "Moulana Zia Ul Haq , Mr. Mohd Younus", "Moulana Hazique Nadvi,Dr. Mushtaq Ahmed", "Moulana Moin Ahmed,Dr. Syed Burhan", "Moulana Dr Mushtaq Ahmed,Dr. Fuzail", "Mufti Mohsin,Mr. Gufran Khan", "Moulana Ahsan ul Haq,Mr. Osama"],
+                Saturday: ["Dr Mushtaq Ahmed", "Speaker AK", "Moulana Zia Ul Haq, Ladies Program", "Moulana Hazique Nadvi,Dr. Syed Burhan", "Ladies Program ", "Ladies Program", "Ladies Program", "Ladies Program"],
+                Sunday: [" ", "Speaker AR", "Speaker AS", "Speaker AT", "Speaker AU", "Speaker AV", "Speaker AW"]
+            };
+
+            const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const currentDate = new Date();
+            const currentDayOfWeek = currentDate.getDay();
+            return speakers[daysOfWeek[currentDayOfWeek]];
+        }
+
+        function getTimeSlot(day) {
+            const timeSlots = [
+                "7:00 PM - 7:50 PM",
+                "10:30 AM - 11:30 AM",
+                "5:30 AM - 6:10 AM",
+                "5:00 AM - 5:40 AM",
+                "6:00 AM - 6:40 AM",
+                "6:00 AM - 6:40 AM",
+                "5:50 AM - 6:30 AM",
+                "6:00 AM - 6:40 AM",
+            ];
+
+            return timeSlots[day - 1];
+        }
+
+        function updateSpeakerInfo() {
+            const meetingNames = [
+                "Dars e Bukhari",
+                "Sunday Parenting Session",
+                "North Zone",
+                "East Zone",
+                "West Zone",
+                "South Zone",
+                "Central Zone",
+                "Telangana Zone"
+            ];
+
+            // Define join links for each time slot
+            const joinLinks = [
+                "https://us06web.zoom.us/j/89082729042?pwd=dnNYb3h4aGJSY0Irb3p0Si9WVGtmUT09",
+                "https://tinyurl.com/MferdWest",
+                "https://tinyurl.com/MferdNorth",
+                "https://tinyurl.com/MferdEast",
+                "https://tinyurl.com/MferdWest",
+                "https://tinyurl.com/MferdSouth",
+                "https://tinyurl.com/MferdCentral",
+                "https://tinyurl.com/MferdTsAp"
+            ];
+
+            for (let i = 1; i <= 8; i++) {
+                const speakers = getCurrentDaySpeaker();
+                const timeSlot = getTimeSlot(i);
+
+                const speakerInfo = document.getElementById("speakerInfo" + i);
+                const joinLink = joinLinks[i - 1]; // Get the join link for the current time slot
+                const cardHtml = `
+                    <a href="${joinLink}" target="_blank" class="glass-button">Join</a>
+                    <p class="meeting-name"><strong>${meetingNames[i - 1]}</strong></p>
+                    <p class="speaker-name glowing"><strong>Speaker: ${speakers[i - 1]}</strong></p>
+                    <p class="time-slot">Time Slot: ${timeSlot}</p>
+                `;
+                speakerInfo.innerHTML = cardHtml;
+            }
+        }
+    </script>
+    
+    <script>
+        updateSpeakerInfo();
+    </script>
+</body>
+</html>
