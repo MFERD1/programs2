@@ -75,7 +75,7 @@
             font-size: 8px; /* Reduced font size */
             line-height: 1.3; /* Adjusted line height */
             opacity: 0.8;
-            margin bottom: 1em;
+            margin-bottom: 1em;
         }
 
         .glass-button-container {
@@ -96,7 +96,7 @@
             font-weight: 900;
             text-transform: uppercase;
             font-size: 10px; /* Increased font size for larger size */
-            letter spacing: 0.05em; /* Reduced letter spacing for smaller size */
+            letter-spacing: 0.05em; /* Reduced letter spacing for smaller size */
             border-radius: 10em;
             color: white;
             margin-top: 10px; /* Add margin to separate the button from content */
@@ -104,9 +104,10 @@
 
         /* Added style for speaker name with glowing effect */
         .speaker-name {
-            font-size: 8px; /* Reduced font size for speaker name */
+            font-size: 11px; /* Reduced font size for speaker name */
             opacity: 0.8;
             animation: glow 2s ease-in-out infinite; /* Slow, gradual glowing animation */
+            color: rgb(235, 78, 16);
         }
 
         @keyframes glow {
@@ -125,14 +126,16 @@
         }
 
         .meeting-name {
-            font-size: 12px; /* Increase font size for meeting name */
+            font-size: 13px; /* Increase font size for meeting name */
             margin-top: 0.5em; /* Add space between meeting name and other content */
             font-weight: bold; /* Make the meeting name bold */
+            color: rgba(9, 19, 60, 1);
         }
 
         .time-slot {
-            font-size: 8px; /* Reduced font size for time slot */
-            margin-top: 0.3em; /* Add space between time slot and other content */
+            font-size: 12px; /* Increased font size for time slot */
+        margin-top: 0.3em; /* Add space between time slot and other content */
+        font-weight: bold; /* Make the "Time Slot" text bold */
         }
     </style>
 </head>
@@ -150,7 +153,7 @@
         <div class="glass-panel" id="speakerInfo2">
             <!-- Content for speaker 2 goes here -->
         </div>
-        <div class ="glass-panel" id="speakerInfo3">
+        <div class="glass-panel" id="speakerInfo3">
             <!-- Content for speaker 3 goes here -->
         </div>
         <div class="glass-panel" id="speakerInfo4">
@@ -173,14 +176,14 @@
     <script>
         // Define speaker information and time slots
         function getCurrentDaySpeaker() {
-            const speakers = {
-                Monday: ["Dr Mushtaq Ahmed", "Speaker B", "Moulana Khaleel ur Rahman,Mr. Qadir Maaz", "Moulana Ayub Ansaari,Dr. Fuzail Iyaz", "Moulana Moin Ahmed,Dr. Fuzail Iyaz", "Moulana Moin Ahmed,Mr. Sameer Panwala", "Mufti Mohsin,Dr. Syed Misbahuddin", "Moulana Syed Shahid Ali Afsar,Mr. Abdullah Mubarak"],
-                Tuesday: ["Dr Mushtaq Ahmed", "Speaker I", "Moulana Khaleel ur Rahman,Dr. Syed Burhan", "Moulana Ayub Ansaari,Mr. Mohammed Ismail", "Moulana Moin Ahmed,Mr. Ghufran Khan", "Moulana Dr Mushtaq Ahmed", "Mufti Mohsin,Mr. Qadir Maaz", "Moulana Syed Shahid Ali Afsar, Mr. Bilal"],
-                Wednesday: ["Dr Mushtaq Ahmed", "Speaker P", "Moulana Khaleel ur Rahman,Mr. Ghufran Khan", "Moulana Ayub Ansaari,Mr. Azhar Syyed", "Moulana Moin Ahmed,Dr. Mushtaq Ahmed", "Moulana Dr Mushtaq Ahmed,Mr. Sameer Panwala", "Mufti Mohsin,Dr. Fuzail Iyaz", "Moulana Syed Shahid Ali Afsar,Dr.  Mohammed Sajid Ali"],
-                Thursday: ["Dr Mushtaq Ahmed", "Speaker W", "Moulana Zia Ul Haq ,Moulana Imran", "Moulana Hazique Nadvi,MASHWARA", "Moulana Moin Ahmed,Mr. Mohd Younus", "Mr. Sameer Panwala,Moulana Dr Mushtaq Ahmed,", "Mufti Mohsin,Dr. Mushtaq Ahmed", "Moulana Ahsan ul Haq,Dr.  Mohammed Sajid Ali"],
-                Friday: ["Dr Mushtaq Ahmed", "Speaker AD", "Moulana Zia Ul Haq , Mr. Mohd Younus", "Moulana Hazique Nadvi,Dr. Mushtaq Ahmed", "Moulana Moin Ahmed,Dr. Syed Burhan", "Moulana Dr Mushtaq Ahmed,Dr. Fuzail", "Mufti Mohsin,Mr. Gufran Khan", "Moulana Ahsan ul Haq,Mr. Osama"],
-                Saturday: ["Dr Mushtaq Ahmed", "Speaker AK", "Moulana Zia Ul Haq, Ladies Program", "Moulana Hazique Nadvi,Dr. Syed Burhan", "Ladies Program ", "Ladies Program", "Ladies Program", "Ladies Program"],
-                Sunday: [" ", "Speaker AR", "Speaker AS", "Speaker AT", "Speaker AU", "Speaker AV", "Speaker AW"]
+            const speakers = {   
+                Monday: ["Dr Mushtaq Ahmed", "Speaker 1", "Moulana Khaleel ur Rahman,Mr. Qadir Maaz", "Moulana Ayub Ansaari,Dr. Fuzail Iyaz", "Moulana Moin Ahmed,Dr. Fuzail Iyaz", "Moulana Moin Ahmed,Mr. Sameer Panwala", "Mufti Mohsin,Dr. Syed Misbahuddin", "Moulana Syed Shahid Ali Afsar,Mr. Abdullah Mubarak"],
+                Tuesday: ["Dr Mushtaq Ahmed", "Speaker 2", "Moulana Khaleel ur Rahman,Dr. Syed Burhan", "Moulana Ayub Ansaari,Aamir Hashmi", "Moulana Moin Ahmed,Mr. Ghufran Khan", "Moulana Dr Mushtaq Ahmed, Aamir Hashmi", "Mufti Mohsin,Mr. Qadir Maaz", "Moulana Syed Shahid Ali Afsar, Mr. Bilal"],
+                Wednesday: ["Dr Mushtaq Ahmed", "Speaker 3 ", "Moulana Khaleel ur Rahman,Mr. Ghufran Khan", "Moulana Ayub Ansaari,Mr. Azhar Syyed", "Moulana Moin Ahmed,Dr. Mushtaq Ahmed", "Moulana Dr Mushtaq Ahmed,Mr. Sameer Panwala", "Mufti Mohsin,Dr. Fuzail Iyaz", "Moulana Syed Shahid Ali Afsar,Dr.  Mohammed Sajid Ali"],
+                Thursday: ["Dr Mushtaq Ahmed", "Speaker 4", "Moulana Zia Ul Haq ,Moulana Imran", "Moulana Hazique Nadvi,MASHWARA", "Moulana Moin Ahmed,Mr. Aamir Hashmi", "Mr. Sameer Panwala,Moulana Dr Mushtaq Ahmed,", "Mufti Mohsin,Dr. Mushtaq Ahmed", "Moulana Ahsan ul Haq,Dr.  Mohammed Sajid Ali"],
+                Friday: ["Dr Mushtaq Ahmed", "Speaker 5", "Moulana Zia Ul Haq , Mr. Mohd Younus", "Moulana Hazique Nadvi,Dr. Mushtaq Ahmed", "Moulana Moin Ahmed,Dr. Syed Burhan", "Moulana Dr Mushtaq Ahmed,Dr. Fuzail", "Mufti Mohsin,Mr. Gufran Khan", "Moulana Ahsan ul Haq,Mr. Osama"],
+                Saturday: ["Dr Mushtaq Ahmed", "Speaker 6", "Moulana Zia Ul Haq, Ladies Program", "Moulana Hazique Nadvi,Dr. Syed Burhan", "Ladies Program ", "Ladies Program", "Ladies Program", "Ladies Program"],
+                Sunday: [" ", "Speaker AR", "Speaker 7 ", "Speaker AT", "Speaker AU", "Speaker AV", "Speaker AW"]
             };
 
             const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -238,7 +241,8 @@
                     <a href="${joinLink}" target="_blank" class="glass-button">Join</a>
                     <p class="meeting-name"><strong>${meetingNames[i - 1]}</strong></p>
                     <p class="speaker-name glowing"><strong>Speaker: ${speakers[i - 1]}</strong></p>
-                    <p class="time-slot">Time Slot: ${timeSlot}</p>
+                    <p class="time-slot"><strong>Time Slot:</strong></p>
+                    <p class="time-slot">${timeSlot}</p>
                 `;
                 speakerInfo.innerHTML = cardHtml;
             }
