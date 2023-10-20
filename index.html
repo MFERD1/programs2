@@ -126,16 +126,42 @@
         }
 
         .meeting-name {
-            font-size: 11px; /* Increase font size for meeting name */
-            margin-top: 0.1em; /* Add space between meeting name and other content */
+            font-size: 13px; /* Increase font size for meeting name */
+            margin-top: 0.5em; /* Add space between meeting name and other content */
             font-weight: bold; /* Make the meeting name bold */
             color: rgba(9, 19, 60, 1);
         }
 
         .time-slot {
-            font-size: 10px; /* Reduced font size for time slot */
+            font-size: 12px; /* Increased font size for time slot */
             margin-top: 0.3em; /* Add space between time slot and other content */
+            font-weight: bold; /* Make the "Time Slot" text bold */
         }
+
+        .running-text {
+        font-size: 12px; /* Adjust font size as needed */
+        font-weight: bold;
+        margin-top: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: runningText 20s linear infinite;
+        width: 100%; /* Set the initial width to 100% */
+    }
+
+    @keyframes runningText {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+    .join-link {
+    color: #0074cc; /* Change the color to your preference */
+    text-decoration: none;
+    margin-left: 10px; /* Add spacing between the text and the link */
+}
+
     </style>
 </head>
 <body>
@@ -143,33 +169,103 @@
         <img src="https://laskerkomol.files.wordpress.com/2021/06/mferd.jpg" alt="Logo" class="logo"> <!-- Add your logo image here -->
         <h1 class="heading">MFERD Daily Programs</h1> <!-- Added heading here -->
     </div>
+
+    <!-- Running Text -->
+    <div class="running-text">
+        MFERD  'GUIDING LIGHT  6:00am to 6:40a.m 
+        <a href="https://your-zoom-link" target="_blank" class="https://us06web.zoom.us/j/81465120443?pwdc2dpRFJLVjc4Um1I5TmY0VEJ1eXkzdz09">Join Now</a>
+    </div>
     
+
     <!-- Create speaker cards for all 8 time slots -->
     <div class="button-container">
+        <!-- Card 1 -->
         <div class="glass-panel" id="speakerInfo1">
-            <!-- Content for speaker 1 goes here -->
+            <a href="https://us06web.zoom.us/j/89082729042?pwd=dnNYb3h4aGJSY0Irb3p0Si9WVGtmUT09" target="_blank" class="glass-button">Join</a>
+            <p class="meeting-name"><strong>Dars e Bukhari</strong></p>
+            <p class="speaker-name glowing"><strong>Speaker: Dr Mushtaq Ahmed</strong></p>
+            <p class="time-slot"><strong>Time Slot:</strong></p>
+            <p class="time-slot">6:30 PM - 7:10 PM</p>
         </div>
+        
+        <!-- Card 2 -->
         <div class="glass-panel" id="speakerInfo2">
-            <!-- Content for speaker 2 goes here -->
-            <!-- Display "Saturday" on top of "Ladies" and add one more "Join" option below "Sunday" -->
+            <a href="https://tinyurl.com/MferdWest" target="_blank" class="glass-button">Join</a>
+            <p class="meeting-name"><strong>North Zone</strong></p>
+            <p class="speaker-name glowing"><strong>Speaker: Moulana Syed Shahid Ali Afsar, Mr. Abdullah Mubarak</strong></p>
+            <p class="time-slot"><strong>Time Slot:</strong></p>
+            <p class="time-slot">6:00 AM - 6:40 AM</p>
         </div>
+        
+        <!-- Card 3 -->
         <div class="glass-panel" id="speakerInfo3">
-            <!-- Content for speaker 3 goes here -->
+            <a href="https://tinyurl.com/MferdNorth" target="_blank" class="glass-button">Join</a>
+            <p class="meeting-name"><strong>East Zone</strong></p>
+            <p class="speaker-name glowing"><strong>Speaker: Moulana Khaleel ur Rahman, Mr. Qadir Maaz</strong></p>
+            <p class="time-slot"><strong>Time Slot:</strong></p>
+            <p class="time-slot">5:30 AM - 6:10 AM</p>
         </div>
+        
+        <!-- Card 4 -->
         <div class="glass-panel" id="speakerInfo4">
-            <!-- Content for speaker 4 goes here -->
+            <a href="https://tinyurl.com/MferdEast" target="_blank" class="glass-button">Join</a>
+            <p class="meeting-name"><strong>West Zone</strong></p>
+            <p class="speaker-name glowing"><strong>Speaker: Moulana Ayub Ansaari, Dr. Fuzail Iyaz</strong></p>
+            <p class="time-slot"><strong>Time Slot:</strong></p>
+            <p class="time-slot">5:00 AM - 5:40 AM</p>
         </div>
+        
+        <!-- Card 5 -->
         <div class="glass-panel" id="speakerInfo5">
-            <!-- Content for speaker 5 goes here -->
+            <a href="https://tinyurl.com/MferdWest" target="_blank" class="glass-button">Join</a>
+            <p class="meeting-name"><strong>South Zone</strong></p>
+            <p class="speaker-name glowing"><strong>Speaker: Moulana Moin Ahmed, Dr. Fuzail Iyaz</strong></p>
+            <p class="time-slot"><strong>Time Slot:</strong></p>
+            <p class="time-slot">6:15 AM - 6:55 AM</p>
         </div>
-        <div class="glass-panel" id="speakerInfo6">
-            <!-- Content for speaker 6 goes here -->
+        
+        <!-- Card 6 -->
+        <div class ="glass-panel" id="speakerInfo6">
+            <a href="https://tinyurl.com/MferdSouth" target="_blank" class="glass-button">Join</a>
+            <p class="meeting-name"><strong>Central Zone</strong></p>
+            <p class="speaker-name glowing"><strong>Speaker: Moulana Moin Ahmed, Mr. Sameer Panwala</strong></p>
+            <p class="time-slot"><strong>Time Slot:</strong></p>
+            <p class="time-slot">6:00 AM - 6:40 AM</p>
         </div>
+        
+        <!-- Card 7 -->
         <div class="glass-panel" id="speakerInfo7">
-            <!-- Content for speaker 7 goes here -->
+            <a href="https://tinyurl.com/MferdCentral" target="_blank" class="glass-button">Join</a>
+            <p class="meeting-name"><strong>Telangana Zone</strong></p>
+            <p class="speaker-name glowing"><strong>Speaker: Mufti Mohsin, Dr. Syed Misbahuddin</strong></p>
+            <p class="time-slot"><strong>Time Slot:</strong></p>
+            <p class="time-slot">5:50 AM - 6:30 AM</p>
         </div>
+        
+        <!-- Card 8 -->
         <div class="glass-panel" id="speakerInfo8">
-            <!-- Content for speaker 8 goes here -->
+            <a href="https://tinyurl.com/MferdTsAp" target="_blank" class="glass-button">Join</a>
+            <p class="meeting-name"><strong>Sunday Parenting Session</strong></p>
+            <p class="speaker-name glowing"><strong>Speaker: Qaadir Maaz</strong></p>
+            <p class="time-slot"><strong>Time Slot:</strong></p>
+            <p class="time-slot">6:00 AM - 6:40 AM</p>
+        </div>
+        
+        <!-- Saturday Program Glass Panel -->
+        <div class="glass-panel" id="speakerInfo9">
+            <a href="https://us06web.zoom.us/j/83789954603?pwd=NXYwUE5OUW40ZHVPallKRXNMR3JPQT09" target="_blank" class="glass-button">Ladies</a>
+            <a href="https://us06web.zoom.us/j/89771607411?pwd=YWdsaTlZa3lmcWxrYnIyZWFJSWpVZz09" target="_blank" class="glass-button">Gents</a>
+            <p class="meeting-name"><strong>Saturday Program</strong></p>
+            <p class="time-slot"><strong>Time Slot:</strong></p>
+            <p class="time-slot">6:00 AM - 6:40 AM</p>
+        </div>
+
+        <!-- Tamil Nadu Zone Glass Panel -->
+        <div class="glass-panel" id="speakerInfo10">
+            <a href="https://your-tamil-nadu-zone-link" target="_blank" class="glass-button">Tamil Nadu Zone</a>
+            <p class="meeting-name"><strong>Tamil Nadu Zone Program</strong></p>
+            <p class="time-slot"><strong>Time Slot:</strong></p>
+            <p class="time-slot">Your Time Slot</p>
         </div>
     </div>
     
@@ -177,13 +273,13 @@
         // Define speaker information and time slots
         function getCurrentDaySpeaker() {
             const speakers = {   
-                Monday: ["Dr Mushtaq Ahmed", "Speaker 1", "Moulana Khaleel ur Rahman,Mr. Qadir Maaz", "Moulana Ayub Ansaari,Dr. Fuzail Iyaz", "Moulana Moin Ahmed,Dr. Fuzail Iyaz", "Moulana Moin Ahmed,Mr. Sameer Panwala", "Mufti Mohsin,Dr. Syed Misbahuddin", "Moulana Syed Shahid Ali Afsar,Mr. Abdullah Mubarak"],
-                Tuesday: ["Dr Mushtaq Ahmed", "Speaker 2", "Moulana Khaleel ur Rahman,Dr. Syed Burhan", "Moulana Ayub Ansaari,Aamir Hashmi", "Moulana Moin Ahmed,Mr. Ghufran Khan", "Moulana Dr Mushtaq Ahmed, Aamir Hashmi", "Mufti Mohsin,Mr. Qadir Maaz", "Moulana Syed Shahid Ali Afsar, Mr. Bilal"],
-                Wednesday: ["Dr Mushtaq Ahmed", "Speaker 3 ", "Moulana Khaleel ur Rahman,Mr. Ghufran Khan", "Moulana Ayub Ansaari,Mr. Azhar Syyed", "Moulana Moin Ahmed,Dr. Mushtaq Ahmed", "Moulana Dr Mushtaq Ahmed,Mr. Sameer Panwala", "Mufti Mohsin,Dr. Fuzail Iyaz", "Moulana Syed Shahid Ali Afsar,Dr.  Mohammed Sajid Ali"],
-                Thursday: ["Dr Mushtaq Ahmed", "", "Moulana Zia Ul Haq ,Moulana Imran", "Moulana Hazique Nadvi,MASHWARA", "Moulana Moin Ahmed,Mr. Aamir Hashmi", "Mr. Sameer Panwala,Moulana Dr Mushtaq Ahmed,", "Mufti Mohsin,Dr. Mushtaq Ahmed", "Moulana Ahsan ul Haq,Dr.  Mohammed Sajid Ali"],
-                Friday: ["Dr Mushtaq Ahmed", "Speaker 5", "Moulana Zia Ul Haq , Mr. Mohd Younus", "Moulana Hazique Nadvi,Dr. Mushtaq Ahmed", "Moulana Moin Ahmed,Dr. Syed Burhan", "Moulana Dr Mushtaq Ahmed,Dr. Fuzail", "Mufti Mohsin,Mr. Gufran Khan", "Moulana Ahsan ul Haq,Mr. Osama"],
-                Saturday: ["Dr Mushtaq Ahmed", "Speaker 6", "Moulana Zia Ul Haq, Saturday Program", "Moulana Hazique Nadvi,Dr. Syed Burhan", "Ladies Program ", "Ladies Program", "Ladies Program", "Ladies Program"],
-                Sunday: [" ", "Speaker AR", "Speaker 7 ", "Speaker AT", "Speaker AU", "Speaker AV", "Speaker AW"]
+                Monday: ["Dr Mushtaq Ahmed", "Moulana Syed Shahid Ali Afsar,Mr. Abdullah Mubarak", "Moulana Khaleel ur Rahman,Mr. Qadir Maaz", "Moulana Ayub Ansaari,Dr. Fuzail Iyaz", "Moulana Moin Ahmed,Dr. Fuzail Iyaz", "Moulana Moin Ahmed,Mr. Sameer Panwala", "Mufti Mohsin,Dr. Syed Misbahuddin", "Qaadir Maaz"],
+                Tuesday: ["Dr Mushtaq Ahmed", "Moulana Syed Shahid Ali Afsar, Mr. Bilal", "Moulana Khaleel ur Rahman,Dr. Syed Burhan", "Moulana Ayub Ansaari,Aamir Hashmi", "Moulana Moin Ahmed,Mr. Ghufran Khan", "Moulana Dr Mushtaq Ahmed, Aamir Hashmi", "Mufti Mohsin,Mr. Qadir Maaz", "Qaadir Maaz"],
+                Wednesday: ["Dr Mushtaq Ahmed", "Moulana Syed Shahid Ali Afsar,Dr.  Mohammed Sajid Ali ", "Moulana Khaleel ur Rahman,Mr. Ghufran Khan", "Moulana Ayub Ansaari,Mr. Azhar Syyed", "Moulana Moin Ahmed,Dr. Mushtaq Ahmed", "Moulana Dr Mushtaq Ahmed,Mr. Sameer Panwala", "Mufti Mohsin,Dr. Fuzail Iyaz", "Qaadir Maaz"],
+                Thursday: ["Dr Mushtaq Ahmed", "Moulana Ahsan ul Haq,Dr.  Mohammed Sajid Ali", "Moulana Zia Ul Haq ,Moulana Imran", "Moulana Hazique Nadvi,MASHWARA", "Moulana Moin Ahmed,Mr. Aamir Hashmi", "Mr. Sameer Panwala,Moulana Dr Mushtaq Ahmed,", "Mufti Mohsin,Dr. Mushtaq Ahmed", "Qaadir Maaz"],
+                Friday: ["Dr Mushtaq Ahmed", "Moulana Ahsan ul Haq,Dr.  Mohammed Sajid Ali", "Moulana Zia Ul Haq , Mr. Mohd Younus", "Moulana Hazique Nadvi,Dr. Mushtaq Ahmed", "Moulana Moin Ahmed,Dr. Syed Burhan", "Moulana Dr Mushtaq Ahmed,Dr. Fuzail", "Mufti Mohsin,Mr. Gufran Khan", "Qaadir Maaz"],
+                Saturday: ["Dr Mushtaq Ahmed", "Ladies Program", "Moulana Zia Ul Haq, Ladies Program", "Moulana Hazique Nadvi,Dr. Syed Burhan", "Ladies Program", "Ladies Program", "Ladies Program", "Ladies Program"],
+                Sunday: [" ", "Speaker AR", "Qaadir Maaz ", "Speaker AT", "Speaker AU", "Speaker AV", "Speaker AW"]
             };
 
             const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -194,11 +290,11 @@
 
         function getTimeSlot(day) {
             const timeSlots = [
-                "7:00 PM - 7:50 PM",
-                "10:30 AM - 11:30 AM",
+                "6:30 PM - 7:10 PM",
+                "6:00 AM - 6:40 AM",
                 "5:30 AM - 6:10 AM",
                 "5:00 AM - 5:40 AM",
-                "6:00 AM - 6:40 AM",
+                "6:15 AM - 6:55 AM",
                 "6:00 AM - 6:40 AM",
                 "5:50 AM - 6:30 AM",
                 "6:00 AM - 6:40 AM",
@@ -210,13 +306,13 @@
         function updateSpeakerInfo() {
             const meetingNames = [
                 "Dars e Bukhari",
-                "Sunday Parenting Session",
                 "North Zone",
                 "East Zone",
                 "West Zone",
                 "South Zone",
                 "Central Zone",
-                "Telangana Zone"
+                "Telangana Zone",
+                "Sunday Parenting Session" // Moved to the last position
             ];
 
             // Define join links for each time slot
@@ -236,37 +332,20 @@
                 const timeSlot = getTimeSlot(i);
 
                 const speakerInfo = document.getElementById("speakerInfo" + i);
-                const joinLink = joinLinks[i - 1]; // Get the join link for the current time slot
-
-                if (i === 2) {
-                    // Display "Saturday" on top of "Ladies" and add one more "Join" option below "Sunday"
-                    const cardHtml = `
-                        <p class="meeting-name"><strong>Saturday Program</strong></p>
-                        <a href="https://us06web.zoom.us/j/83789954603?pwd=NXYwUE5OUW40ZHVPallKRXNMR3JPQT09" target="_blank" class="glass-button">Ladies</a>
-                        <a href="https://us06web.zoom.us/j/89771607411?pwd=YWdsaTlZa3lmcWxrYnIyZWFJSWpVZz09" target="_blank" class="glass-button">Gents</a>
-                       
-                        <p class="meeting-name"><strong>${meetingNames[1]}</strong></p>
-                        <a href="https://tinyurl.com/MferdWest" target="_blank" class="glass-button">Join</a>
-                       
-                        <p class="time-slot">Time Slot: ${timeSlot}</p>
-                    `;
-                    speakerInfo.innerHTML = cardHtml;
-                } else {
-                    // Display the regular content for other cards
-                    const cardHtml = `
-                        <a href="${joinLink}" target="_blank" class="glass-button">Join</a>
-                        <p class="meeting-name"><strong>${meetingNames[i - 1]}</strong></p>
-                        <p class="speaker-name glowing"><strong>Speaker: ${speakers[i - 1]}</strong></p>
-                        <p class="time-slot">Time Slot: ${timeSlot}</p>
-                    `;
-                    speakerInfo.innerHTML = cardHtml;
-                }
+                const joinLink = joinLinks[i - 1];
+                const cardHtml = `
+                    <a href="${joinLink}" target="_blank" class="glass-button">Join</a>
+                    <p class="meeting-name"><strong>${meetingNames[i - 1]}</strong></p>
+                    <p class="speaker-name glowing"><strong>Speaker: ${speakers[i - 1]}</strong></p>
+                    <p class="time-slot"><strong>Time Slot:</strong></p>
+                    <p class="time-slot">${timeSlot}</p>
+                `;
+                speakerInfo.innerHTML = cardHtml;
             }
         }
-    </script>
-    
-    <script>
-        updateSpeakerInfo();
+        
+        // Update speaker information on page load
+        window.onload = updateSpeakerInfo();
     </script>
 </body>
 </html>
