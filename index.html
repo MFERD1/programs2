@@ -1,351 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
-
-    <style>
-        /* Use Space Grotesk font and set text color */
-        body {
-            font-family: "Space Grotesk", Helvetica, Arial, sans-serif;
-            color: rgba(9, 19, 60, 1);
-            background-image: url();
-            background-position: center;
-            background-size: cover;
-            min-height: 100vh;
-            width: 100vw;
-            display: flex;
-            flex-direction: column; /* Stack elements vertically */
-            margin: 0; /* Remove default margin */
-        }
-
-        /* Style for the container that holds the image and text */
-        .header-container {
-            display: flex;
-            align-items: center;
-            gap: 10px; /* Adjust the gap between the image and text */
-            padding: 20px; /* Add padding to create space around the header */
-        }
-
-        /* Style for the image */
-        .logo {
-            width: 100px; /* Set the desired width for your logo */
-            height: auto;
-        }
-
-        /* Style for the heading */
-        .heading {
-            font-size: 20px; /* Adjust the font size for the heading */
-            font-weight: bold;
-        }
-
-        /* Style for the rest of the content */
-        .button-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 16px;
-        }
-
-        .glass-panel {
-            background-image: linear-gradient(
-                to bottom right,
-                rgba(255, 255, 255, 0.3) 0%,
-                rgba(255, 255,255, 0.1) 100%
-            );
-            backdrop-filter: blur(6px);
-            border-radius: 12px;
-            width: calc(33.33% - 16px); /* 33.33% width with reduced spacing */
-            max-width: 300px; /* Maximum width to limit the size */
-            padding: 10px; /* Reduced padding */
-            box-shadow: rgba(255, 255, 255, 0.5) -10px -10px 25px inset,
-                rgba(0, 0, 0, 0.1) 5px 5px 15px, rgba(0, 0, 0, 0.06) 2px 2px 5px;
-            display: flex;
-            flex-direction: column; /* Stack elements vertically */
-            align-items: center; /* Center align content horizontally */
-        }
-
-        .h2 {
-            font-size: 0.9em; /* Reduced font size */
-            font-weight: 900; /* Increased font weight for the title */
-            margin-top: 0;
-        }
-
-        .card__text {
-            font-size: 8px; /* Reduced font size */
-            line-height: 1.3; /* Adjusted line height */
-            opacity: 0.8;
-            margin-bottom: 1em;
-        }
-
-        .glass-button-container {
-            display: flex;
-            width: 100%;
-            justify-content: center; /* Center align the "Join" button */
-        }
-
-        /* Modified glass button size */
-        .glass-button {
-            padding: 0.4em 0.8em; /* Increased padding for larger size */
-            background-image: linear-gradient(
-                -45deg,
-                rgba(9, 28, 60, 1) 0%,
-                rgba(67, 46, 103, 1) 100%
-            );
-            text-decoration: none;
-            font-weight: 900;
-            text-transform: uppercase;
-            font-size: 10px; /* Increased font size for larger size */
-            letter-spacing: 0.05em; /* Reduced letter spacing for smaller size */
-            border-radius: 10em;
-            color: white;
-            margin-top: 10px; /* Add margin to separate the button from content */
-        }
-
-        /* Added style for speaker name with glowing effect */
-        .speaker-name {
-            font-size: 11px; /* Reduced font size for speaker name */
-            opacity: 0.8;
-            animation: glow 2s ease-in-out infinite; /* Slow, gradual glowing animation */
-            color: rgb(235, 78, 16);
-        }
-
-        @keyframes glow {
-            0% {
-                opacity: 0.5;
-                box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.7);
-            }
-            50% {
-                opacity: 1;
-                box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.9);
-            }
-            100% {
-                opacity: 0.5;
-                box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.7);
-            }
-        }
-
-        .meeting-name {
-            font-size: 13px; /* Increase font size for meeting name */
-            margin-top: 0.5em; /* Add space between meeting name and other content */
-            font-weight: bold; /* Make the meeting name bold */
-            color: rgba(9, 19, 60, 1);
-        }
-
-        .time-slot {
-            font-size: 12px; /* Increased font size for time slot */
-            margin-top: 0.3em; /* Add space between time slot and other content */
-            font-weight: bold; /* Make the "Time Slot" text bold */
-        }
-
-        .running-text {
-        font-size: 12px; /* Adjust font size as needed */
-        font-weight: bold;
-        margin-top: 10px;
-        white-space: nowrap;
-        overflow: hidden;
-        animation: runningText 20s linear infinite;
-        width: 100%; /* Set the initial width to 100% */
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Submit</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    @keyframes runningText {
-        0% {
-            transform: translateX(100%);
-        }
-        100% {
-            transform: translateX(-100%);
-        }
+    body {
+      background-color: #98efe1;
     }
-    .join-link {
-    color: #0074cc; /* Change the color to your preference */
-    text-decoration: none;
-    margin-left: 10px; /* Add spacing between the text and the link */
-}
 
-    </style>
+    .content {
+      text-align: center;
+      position: relative;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      background-color: #eeeeee;
+      padding: 20px 30px;
+      width: 345px;
+      border-radius: 15px;
+      top: 10px;
+      border: 1px solid rgb(141, 141, 141);
+      margin-top: 30px;
+    }
+
+    label {
+      text-align: left;
+      margin: 10px;
+    }
+
+    input, select {
+      padding: 10px 15px;
+      width: 320px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid rgb(119, 119, 119);
+    }
+
+    .click {
+      margin: 10px;
+      background-color: rgb(4, 162, 4);
+      color: #fff;
+      border: none;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .click:hover {
+      background-color: rgb(5, 134, 5);
+    }
+
+    .line {
+      font-size: 10px;
+      color: rgb(33, 33, 33);
+      margin: 6px;
+    }
+
+    /* Timer Styles */
+    .timer-container {
+      text-align: right;
+      margin-top: 10px;
+    }
+
+    .timer {
+      font-size: 36px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <div class="header-container">
-        <img src="https://laskerkomol.files.wordpress.com/2021/06/mferd.jpg" alt="Logo" class="logo"> <!-- Add your logo image here -->
-        <h1 class="heading">MFERD Daily Programs</h1> <!-- Added heading here -->
-    </div>
+  <div class="content" id="page1">
+    <form id="product" name="product" onsubmit="return false;">
+      <h1>Reading Fluency Test</h1>
 
-    <!-- Running Text -->
-    <div class="running-text">
-        MFERD  'GUIDING LIGHT  6:00am to 6:40a.m 
-        <a href="https://your-zoom-link" target="_blank" class="https://us06web.zoom.us/j/81465120443?pwdc2dpRFJLVjc4Um1I5TmY0VEJ1eXkzdz09">Join Now</a>
-    </div>
-    
+      <label for="school">School*</label>
+      <select id="school" name="School" required="">
+        <option disabled="" selected="" value="">Select your school</option>
+        <option value="Huda National School KBS">Huda National School KBS</option>
+        <option value="Huda National School RHN">Huda National School RHN</option>
+        <option value="Huda National School BYR">Huda National School BYR</option>
+        <option value="Huda National School KG">Huda National School KG</option>
+      </select>
 
-    <!-- Create speaker cards for all 8 time slots -->
-    <div class="button-container">
-        <!-- Card 1 -->
-        <div class="glass-panel" id="speakerInfo1">
-            <a href="https://us06web.zoom.us/j/89082729042?pwd=dnNYb3h4aGJSY0Irb3p0Si9WVGtmUT09" target="_blank" class="glass-button">Join</a>
-            <p class="meeting-name"><strong>Dars e Bukhari</strong></p>
-            <p class="speaker-name glowing"><strong>Speaker: Dr Mushtaq Ahmed</strong></p>
-            <p class="time-slot"><strong>Time Slot:</strong></p>
-            <p class="time-slot">6:30 PM - 7:10 PM</p>
-        </div>
-        
-        <!-- Card 2 -->
-        <div class="glass-panel" id="speakerInfo2">
-            <a href="https://tinyurl.com/MferdWest" target="_blank" class="glass-button">Join</a>
-            <p class="meeting-name"><strong>North Zone</strong></p>
-            <p class="speaker-name glowing"><strong>Speaker: Moulana Syed Shahid Ali Afsar, Mr. Abdullah Mubarak</strong></p>
-            <p class="time-slot"><strong>Time Slot:</strong></p>
-            <p class="time-slot">6:00 AM - 6:40 AM</p>
-        </div>
-        
-        <!-- Card 3 -->
-        <div class="glass-panel" id="speakerInfo3">
-            <a href="https://tinyurl.com/MferdNorth" target="_blank" class="glass-button">Join</a>
-            <p class="meeting-name"><strong>East Zone</strong></p>
-            <p class="speaker-name glowing"><strong>Speaker: Moulana Khaleel ur Rahman, Mr. Qadir Maaz</strong></p>
-            <p class="time-slot"><strong>Time Slot:</strong></p>
-            <p class="time-slot">5:30 AM - 6:10 AM</p>
-        </div>
-        
-        <!-- Card 4 -->
-        <div class="glass-panel" id="speakerInfo4">
-            <a href="https://tinyurl.com/MferdEast" target="_blank" class="glass-button">Join</a>
-            <p class="meeting-name"><strong>West Zone</strong></p>
-            <p class="speaker-name glowing"><strong>Speaker: Moulana Ayub Ansaari, Dr. Fuzail Iyaz</strong></p>
-            <p class="time-slot"><strong>Time Slot:</strong></p>
-            <p class="time-slot">5:00 AM - 5:40 AM</p>
-        </div>
-        
-        <!-- Card 5 -->
-        <div class="glass-panel" id="speakerInfo5">
-            <a href="https://tinyurl.com/MferdWest" target="_blank" class="glass-button">Join</a>
-            <p class="meeting-name"><strong>South Zone</strong></p>
-            <p class="speaker-name glowing"><strong>Speaker: Moulana Moin Ahmed, Dr. Fuzail Iyaz</strong></p>
-            <p class="time-slot"><strong>Time Slot:</strong></p>
-            <p class="time-slot">6:15 AM - 6:55 AM</p>
-        </div>
-        
-        <!-- Card 6 -->
-        <div class ="glass-panel" id="speakerInfo6">
-            <a href="https://tinyurl.com/MferdSouth" target="_blank" class="glass-button">Join</a>
-            <p class="meeting-name"><strong>Central Zone</strong></p>
-            <p class="speaker-name glowing"><strong>Speaker: Moulana Moin Ahmed, Mr. Sameer Panwala</strong></p>
-            <p class="time-slot"><strong>Time Slot:</strong></p>
-            <p class="time-slot">6:00 AM - 6:40 AM</p>
-        </div>
-        
-        <!-- Card 7 -->
-        <div class="glass-panel" id="speakerInfo7">
-            <a href="https://tinyurl.com/MferdCentral" target="_blank" class="glass-button">Join</a>
-            <p class="meeting-name"><strong>Telangana Zone</strong></p>
-            <p class="speaker-name glowing"><strong>Speaker: Mufti Mohsin, Dr. Syed Misbahuddin</strong></p>
-            <p class="time-slot"><strong>Time Slot:</strong></p>
-            <p class="time-slot">5:50 AM - 6:30 AM</p>
-        </div>
-        
-        <!-- Card 8 -->
-        <div class="glass-panel" id="speakerInfo8">
-            <a href="https://tinyurl.com/MferdTsAp" target="_blank" class="glass-button">Join</a>
-            <p class="meeting-name"><strong>Sunday Parenting Session</strong></p>
-            <p class="speaker-name glowing"><strong>Speaker: Qaadir Maaz</strong></p>
-            <p class="time-slot"><strong>Time Slot:</strong></p>
-            <p class="time-slot">6:00 AM - 6:40 AM</p>
-        </div>
-        
-        <!-- Saturday Program Glass Panel -->
-        <div class="glass-panel" id="speakerInfo9">
-            <a href="https://us06web.zoom.us/j/83789954603?pwd=NXYwUE5OUW40ZHVPallKRXNMR3JPQT09" target="_blank" class="glass-button">Ladies</a>
-            <a href="https://us06web.zoom.us/j/89771607411?pwd=YWdsaTlZa3lmcWxrYnIyZWFJSWpVZz09" target="_blank" class="glass-button">Gents</a>
-            <p class="meeting-name"><strong>Saturday Program</strong></p>
-            <p class="time-slot"><strong>Time Slot:</strong></p>
-            <p class="time-slot">6:00 AM - 6:40 AM</p>
-        </div>
+      <label for="teacher">Teacher's Name*</label>
+      <input class="fil" name="Teacher Name" placeholder="Enter Teacher Name" required="" type="text" />
 
-        <!-- Tamil Nadu Zone Glass Panel -->
-        <div class="glass-panel" id="speakerInfo10">
-            <a href="https://your-tamil-nadu-zone-link" target="_blank" class="glass-button">Tamil Nadu Zone</a>
-            <p class="meeting-name"><strong>Tamil Nadu Zone Program</strong></p>
-            <p class="time-slot"><strong>Time Slot:</strong></p>
-            <p class="time-slot">Your Time Slot</p>
-        </div>
-    </div>
-    
-    <script>
-        // Define speaker information and time slots
-        function getCurrentDaySpeaker() {
-            const speakers = {   
-                Monday: ["Dr Mushtaq Ahmed", "Moulana Syed Shahid Ali Afsar,Mr. Abdullah Mubarak", "Moulana Khaleel ur Rahman,Mr. Qadir Maaz", "Moulana Ayub Ansaari,Dr. Fuzail Iyaz", "Moulana Moin Ahmed,Dr. Fuzail Iyaz", "Moulana Moin Ahmed,Mr. Sameer Panwala", "Mufti Mohsin,Dr. Syed Misbahuddin", "Qaadir Maaz"],
-                Tuesday: ["Dr Mushtaq Ahmed", "Moulana Syed Shahid Ali Afsar, Mr. Bilal", "Moulana Khaleel ur Rahman,Dr. Syed Burhan", "Moulana Ayub Ansaari,Aamir Hashmi", "Moulana Moin Ahmed,Mr. Ghufran Khan", "Moulana Dr Mushtaq Ahmed, Aamir Hashmi", "Mufti Mohsin,Mr. Qadir Maaz", "Qaadir Maaz"],
-                Wednesday: ["Dr Mushtaq Ahmed", "Moulana Syed Shahid Ali Afsar,Dr.  Mohammed Sajid Ali ", "Moulana Khaleel ur Rahman,Mr. Ghufran Khan", "Moulana Ayub Ansaari,Mr. Azhar Syyed", "Moulana Moin Ahmed,Dr. Mushtaq Ahmed", "Moulana Dr Mushtaq Ahmed,Mr. Sameer Panwala", "Mufti Mohsin,Dr. Fuzail Iyaz", "Qaadir Maaz"],
-                Thursday: ["Dr Mushtaq Ahmed", "Moulana Ahsan ul Haq,Dr.  Mohammed Sajid Ali", "Moulana Zia Ul Haq ,Moulana Imran", "Moulana Hazique Nadvi,MASHWARA", "Moulana Moin Ahmed,Mr. Aamir Hashmi", "Mr. Sameer Panwala,Moulana Dr Mushtaq Ahmed,", "Mufti Mohsin,Dr. Mushtaq Ahmed", "Qaadir Maaz"],
-                Friday: ["Dr Mushtaq Ahmed", "Moulana Ahsan ul Haq,Dr.  Mohammed Sajid Ali", "Moulana Zia Ul Haq , Mr. Mohd Younus", "Moulana Hazique Nadvi,Dr. Mushtaq Ahmed", "Moulana Moin Ahmed,Dr. Syed Burhan", "Moulana Dr Mushtaq Ahmed,Dr. Fuzail", "Mufti Mohsin,Mr. Gufran Khan", "Qaadir Maaz"],
-                Saturday: ["Dr Mushtaq Ahmed", "Ladies Program", "Moulana Zia Ul Haq, Ladies Program", "Moulana Hazique Nadvi,Dr. Syed Burhan", "Ladies Program", "Ladies Program", "Ladies Program", "Ladies Program"],
-                Sunday: [" ", "Speaker AR", "Qaadir Maaz ", "Speaker AT", "Speaker AU", "Speaker AV", "Speaker AW"]
-            };
+      <label for="student">Student's Name</label>
+      <input class="fil" name="Student Name" placeholder="Student Name" type="text" />
 
-            const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-            const currentDate = new Date();
-            const currentDayOfWeek = currentDate.getDay();
-            return speakers[daysOfWeek[currentDayOfWeek]];
-        }
+      <label for="subject">Subject Name</label>
+      <select id="subject" name="Subject" required="">
+        <option disabled="" selected="" value="">Select subject</option>
+        <option value="English">English</option>
+        <option value="Urdu">Urdu</option>
+        <option value="Kannada">Kannada</option>
+        <option value="Hindi">HINDI</option>
+      </select>
 
-        function getTimeSlot(day) {
-            const timeSlots = [
-                "6:30 PM - 7:10 PM",
-                "6:00 AM - 6:40 AM",
-                "5:30 AM - 6:10 AM",
-                "5:00 AM - 5:40 AM",
-                "6:15 AM - 6:55 AM",
-                "6:00 AM - 6:40 AM",
-                "5:50 AM - 6:30 AM",
-                "6:00 AM - 6:40 AM",
-            ];
+      <label for="grade">Grade*</label>
+      <select id="grade" name="Grade" required="">
+        <option disabled="" selected="" value="">Select Grade</option>
+        <option value="Grade 1">Grade 1</option>
+        <option value="Grade 2">Grade 2</option>
+        <option value="Grade 3">Grade 3</option>
+        <option value="Grade 4">Grade 4</option>
+        <option value="Grade 5">Grade 5</option>
+      </select>
 
-            return timeSlots[day - 1];
-        }
+      <button class="click" onclick="goToPage2()" type="button">Next ➔</button>
+    </form>
+  </div>
 
-        function updateSpeakerInfo() {
-            const meetingNames = [
-                "Dars e Bukhari",
-                "North Zone",
-                "East Zone",
-                "West Zone",
-                "South Zone",
-                "Central Zone",
-                "Telangana Zone",
-                "Sunday Parenting Session" // Moved to the last position
-            ];
+  <div class="content" id="page2" style="display: none;">
+    <form id="timerForm" onsubmit="return false;">
+      <h1>Reading Fluency Test</h1>
+      <p style="font-size: 10px;">Reading Fluency test</p>
+      <button class="click" onclick="startStopTimer()" type="button">Start ➔</button>
+      <div class="timer-container">
+        <label for="timer">Timer</label>
+        <div class="timer" id="timer">00:00:00</div>
+      </div>
 
-            // Define join links for each time slot
-            const joinLinks = [
-                "https://us06web.zoom.us/j/89082729042?pwd=dnNYb3h4aGJSY0Irb3p0Si9WVGtmUT09",
-                "https://tinyurl.com/MferdWest",
-                "https://tinyurl.com/MferdNorth",
-                "https://tinyurl.com/MferdEast",
-                "https://tinyurl.com/MferdWest",
-                "https://tinyurl.com/MferdSouth",
-                "https://tinyurl.com/MferdCentral",
-                "https://tinyurl.com/MferdTsAp"
-            ];
+      <label for="words">Number of words read</label>
+      <input class="fil" id="words-read" name="Number of words read" placeholder="Number of Words Read" required="" type="number" />
 
-            for (let i = 1; i <= 8; i++) {
-                const speakers = getCurrentDaySpeaker();
-                const timeSlot = getTimeSlot(i);
+      <!-- Timer Container -->
+      <label for="errors">Number of errors*</label>
+      <input class="fil" id="number-of-errors" name="Number of errors" placeholder="Number of Errors" required="" type="number" />
+      
+      <button class="click" onclick="calculateWPM()" type="button">Submit ➔</button>
+      
+      <label for="wpm">WPM</label>
+      <input class="fil" id="wpm" name="WPM" placeholder="WPM" readonly="" type="text" />
 
-                const speakerInfo = document.getElementById("speakerInfo" + i);
-                const joinLink = joinLinks[i - 1];
-                const cardHtml = `
-                    <a href="${joinLink}" target="_blank" class="glass-button">Join</a>
-                    <p class="meeting-name"><strong>${meetingNames[i - 1]}</strong></p>
-                    <p class="speaker-name glowing"><strong>Speaker: ${speakers[i - 1]}</strong></p>
-                    <p class="time-slot"><strong>Time Slot:</strong></p>
-                    <p class="time-slot">${timeSlot}</p>
-                `;
-                speakerInfo.innerHTML = cardHtml;
-            }
-        }
-        
-        // Update speaker information on page load
-        window.onload = updateSpeakerInfo();
-    </script>
+      <label for="level">Level</label>
+      <input class="fil" id="level" name="Level" placeholder="Level" readonly="" type="text" />
+
+      <p class="line"></p>
+
+      <button class="click" onclick="goToPage1()" type="button">Back ➔</button>
+    </form>
+  </div>
+
+  <script>
+    let timerInterval;
+    let timerRunning = false;
+    let seconds = 0;
+
+    function goToPage2() {
+      document.getElementById('page1').style.display = 'none';
+      document.getElementById('page2').style.display = 'block';
+    }
+
+    function goToPage1() {
+      document.getElementById('page2').style.display = 'none';
+      document.getElementById('page1').style.display = 'block';
+    }
+
+    function startStopTimer() {
+      const startButton = document.querySelector('#page2 button[onclick="startStopTimer()"]');
+      const submitButton = document.querySelector('#page2 button[onclick="calculateWPM()"]');
+      const wpmInput = document.getElementById('wpm');
+
+      if (!timerRunning) {
+        timerInterval = setInterval(updateTimer, 1000);
+        timerRunning = true;
+        startButton.textContent = 'Stop';
+        submitButton.disabled = true;
+        wpmInput.value = ''; // Clear WPM input when starting the timer
+      } else {
+        clearInterval(timerInterval);
+        timerRunning = false;
+        startButton.textContent = 'Start';
+        submitButton.disabled = false;
+      }
+    }
+
+    function updateTimer() {
+      seconds++;
+      const hours = Math.floor(seconds / 3600);
+      const minutes = Math.floor((seconds % 3600) / 60);
+      const displaySeconds = seconds % 60;
+
+      const formattedTime = `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(displaySeconds)}`;
+      document.getElementById('timer').textContent = formattedTime;
+    }
+
+    function formatTime(time) {
+      return time < 10 ? `0${time}` : time;
+    }
+
+    function calculateLevel(wpm) {
+      if (wpm > 55) return 5;
+      if (wpm > 45) return 4;
+      if (wpm > 35) return 3;
+      if (wpm > 25) return 2;
+      return 1;
+    }
+
+    function showPopup(studentName, wpm, level) {
+      alert(`Student Name: ${studentName}\nWPM: ${wpm}\nLevel: ${level}`);
+    }
+
+    function calculateWPM() {
+      document.getElementById('page2').style.display = 'none';
+      const wordsReadInput = document.getElementById('words-read');
+      const errorsInput = document.getElementById('number-of-errors');
+      const wpmInput = document.getElementById('wpm');
+      const levelInput = document.getElementById('level');
+      const timerValue = seconds;
+
+      const wordsRead = parseInt(wordsReadInput.value);
+      const errors = parseInt(errorsInput.value);
+
+      const wordsPerMinute = (wordsRead - errors) / (timerValue / 60);
+      const wpm = Math.round(wordsPerMinute);
+      wpmInput.value = wpm;
+
+      const level = calculateLevel(wpm);
+      levelInput.value = level;
+
+      const studentName = document.querySelector('#page1 input[name="Student Name"]').value;
+      showPopup(studentName, wpm, level);
+
+      const form = document.getElementById('product');
+      const formData = new FormData(form);
+      formData.set('WPM', wpm);
+      formData.set('Level', level);
+
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbyJn_04kKdS4sHTmgOVO_vgFCFHSDmNSYwwEonkmXuPOmSzhWHvUk9OwhPS1-DfD3Ze/exec';
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => {
+          if (response.ok) {
+            alert("Thank you! Your form is submitted successfully.");
+            window.location.reload();
+          } else {
+            throw new Error('Form submission failed');
+          }
+        })
+        .catch(error => console.error('Error!', error.message));
+    }
+  </script>
 </body>
 </html>
